@@ -7,10 +7,27 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Home</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
 
     <style>
         canvas {
@@ -20,7 +37,7 @@
         }
 
         .chart-container {
-            width: 800px;
+            width: 250px;
             margin-left: 40px;
             margin-right: 40px;
             margin-bottom: 40px;
@@ -35,16 +52,39 @@
     </style>
 
 </head>
+
 <body>
     <p>
         <button id="collect-btn" type="button" style="visibility:hidden">Collect</button>
     </p>
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="chart-container">
+                    <canvas id="memory-canvas"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label>Test Hello world</label>
 
-    <div class="container">
-        <div class="chart-container">
-            <canvas id="memory-canvas"></canvas>
+            </div>
+            <div class="col-md-4"></div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <label>Test Hello world 2</label>
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </main>
 
     <script>
         Chart.defaults.global.defaultFontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
