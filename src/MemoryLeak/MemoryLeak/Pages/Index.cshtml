@@ -1,7 +1,7 @@
 ﻿@page
 
 @{
-    Layout = null;
+	Layout = null;
 }
 
 <!DOCTYPE html>
@@ -9,264 +9,261 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Home</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-    <link rel="stylesheet"
-        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
-        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
-        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+	<meta name="viewport" content="width=device-width" />
+	<title>Home</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+	<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<link rel="stylesheet"
+		href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+		integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+		integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+		integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+		crossorigin="anonymous"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
 
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
 
-        .chart-container {
-            width: 250px;
-            margin-left: 40px;
-            margin-right: 40px;
-            margin-bottom: 40px;
-        }
+		.chart-container {
+			width: 1000px;
+			margin-left: 40px;
+			margin-right: 40px;
+			margin-bottom: 40px;
+		}
 
-        .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    </style>
+		.container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	</style>
 
 </head>
 
 <body>
-    <p>
-        <button id="collect-btn" type="button" style="visibility:hidden">Collect</button>
-    </p>
-    <main class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="chart-container">
-                    <canvas id="memory-canvas"></canvas>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <label>Test Hello world</label>
+	<p>
+		<button id="collect-btn" type="button" style="visibility:hidden">Collect</button>
+	</p>
+	<main class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="chart-container">
+					<canvas id="memory-canvas"></canvas>
+				</div>
+			</div>
+			@*<div class="col-md-4">
+				<label>Test Hello world</label>
 
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+			</div>
+			<div class="col-md-4"></div>*@
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+		</div>
+	</main>
 
-                <label>Test Hello world 2</label>
+	<script>
+		Chart.defaults.global.defaultFontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+		var memoryContext = document.getElementById("memory-canvas").getContext('2d');
+		var memoryChart = new Chart(memoryContext, {
+			type: 'line',
+			data: {
+				datasets: [
+					{
+						label: 'Allocated',
+						data: [],
+						yAxisID: 'y-axis-memory',
+						borderColor: 'red',
+						backgroundColor: 'red',
+						pointRadius: 0,
+						fill: false
+					},
+					{
+						label: 'Working Set',
+						data: [],
+						yAxisID: 'y-axis-memory',
+						borderColor: 'blue',
+						backgroundColor: 'blue',
+						pointRadius: 0,
+						fill: false
+					},
+					{
+						label: 'Gen 0',
+						data: [],
+						yAxisID: 'y-axis-collections',
+						borderColor: 'green',
+						backgroundColor: 'green',
+						fill: false,
+						showLine: false, // only show point
+						pointStyle: 'triangle',
+						pointRadius: 5
 
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-        </div>
-    </main>
+					},
+					{
+						label: 'Gen 1',
+						data: [],
+						yAxisID: 'y-axis-collections',
+						borderColor: 'orange',
+						backgroundColor: 'orange',
+						fill: false,
+						showLine: false, // only show point
+						pointStyle: 'triangle',
+						pointRadius: 5
 
-    <script>
-        Chart.defaults.global.defaultFontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
-        var memoryContext = document.getElementById("memory-canvas").getContext('2d');
-        var memoryChart = new Chart(memoryContext, {
-            type: 'line',
-            data: {
-                datasets: [
-                    {
-                        label: 'Allocated',
-                        data: [],
-                        yAxisID: 'y-axis-memory',
-                        borderColor: 'red',
-                        backgroundColor: 'red',
-                        pointRadius: 0,
-                        fill: false
-                    },
-                    {
-                        label: 'Working Set',
-                        data: [],
-                        yAxisID: 'y-axis-memory',
-                        borderColor: 'blue',
-                        backgroundColor: 'blue',
-                        pointRadius: 0,
-                        fill: false
-                    },
-                    {
-                        label: 'Gen 0',
-                        data: [],
-                        yAxisID: 'y-axis-collections',
-                        borderColor: 'green',
-                        backgroundColor: 'green',
-                        fill: false,
-                        showLine: false, // only show point
-                        pointStyle: 'triangle',
-                        pointRadius: 5
+					},
+					{
+						label: 'Gen 2',
+						data: [],
+						yAxisID: 'y-axis-collections',
+						borderColor: 'black',
+						backgroundColor: 'black',
+						fill: false,
+						showLine: false, // only show point
+						pointStyle: 'circle',
+						pointRadius: 5
+					},
+					{
+						label: 'CPU',
+						data: []
+					},
+					{
+						label: 'RPS',
+						data: []
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					xAxes: [{
+						type: 'time',
+						distribution: 'linear',
+						time: {
+							unit: 'second',
+							displayFormats: {
+								second: 'mm:ss'
+							}
+						},
+						bounds: 'ticks',
+						ticks: {
+							callback: function (value, index, values) {
+								return index;
+							}
+						}
+					}],
+					yAxes: [{
+						id: 'y-axis-memory',
+						ticks: {
+							beginAtZero: true,
+							bounds: 'data',
+							position: 'left',
+							callback: function (value, index, values) {
+								return value + ' MB';
+							}
+						}
+					},
+					{
+						id: 'y-axis-collections',
+						display: false,
+						ticks: {
+							beginAtZero: true,
+							min: 0,
+							max: 2
+						}
+					}]
+				},
+				tooltips: {
+					enabled: false
+				}
+			}
+		});
 
-                    },
-                    {
-                        label: 'Gen 1',
-                        data: [],
-                        yAxisID: 'y-axis-collections',
-                        borderColor: 'orange',
-                        backgroundColor: 'orange',
-                        fill: false,
-                        showLine: false, // only show point
-                        pointStyle: 'triangle',
-                        pointRadius: 5
+		const diagnosticsUrl = "/api/diagnostics";
+		const collectUrl = "/api/collect";
 
-                    },
-                    {
-                        label: 'Gen 2',
-                        data: [],
-                        yAxisID: 'y-axis-collections',
-                        borderColor: 'black',
-                        backgroundColor: 'black',
-                        fill: false,
-                        showLine: false, // only show point
-                        pointStyle: 'triangle',
-                        pointRadius: 5
-                    },
-                    {
-                        label: 'CPU',
-                        data: []
-                    },
-                    {
-                        label: 'RPS',
-                        data: []
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    xAxes: [{
-                        type: 'time',
-                        distribution: 'linear',
-                        time: {
-                            unit: 'second',
-                            displayFormats: {
-                                second: 'mm:ss'
-                            }
-                        },
-                        bounds: 'ticks',
-                        ticks: {
-                            callback: function (value, index, values) {
-                                return index;
-                            }
-                        }
-                    }],
-                    yAxes: [{
-                        id: 'y-axis-memory',
-                        ticks: {
-                            beginAtZero: true,
-                            bounds: 'data',
-                            position: 'left',
-                            callback: function (value, index, values) {
-                                return value + ' MB';
-                            }
-                        }
-                    },
-                    {
-                        id: 'y-axis-collections',
-                        display: false,
-                        ticks: {
-                            beginAtZero: true,
-                            min: 0,
-                            max: 2
-                        }
-                    }]
-                },
-                tooltips: {
-                    enabled: false
-                }
-            }
-        });
+		const maxEntries = 50;
+		const interval = 300;
+		var allocated = memoryChart.data.datasets[0].data;
+		var workingSet = memoryChart.data.datasets[1].data;
+		var generation0 = memoryChart.data.datasets[2].data;
+		var generation1 = memoryChart.data.datasets[3].data;
+		var generation2 = memoryChart.data.datasets[4].data;
+		var previousGen0 = 0,
+			previousGen1 = 0,
+			previousGen2 = 0;
 
-        const diagnosticsUrl = "/api/diagnostics";
-        const collectUrl = "/api/collect";
+		setInterval(function () {
+			fetch(diagnosticsUrl)
+				.then(response => {
+					return response.json();
+				})
+				.then(diagnostics => {
+					var now = new Date();
+					allocated.push({ x: now, y: diagnostics.allocated / 1000000 });
+					workingSet.push({ x: now, y: diagnostics.workingSet / 1000000 });
 
-        const maxEntries = 50;
-        const interval = 300;
-        var allocated = memoryChart.data.datasets[0].data;
-        var workingSet = memoryChart.data.datasets[1].data;
-        var generation0 = memoryChart.data.datasets[2].data;
-        var generation1 = memoryChart.data.datasets[3].data;
-        var generation2 = memoryChart.data.datasets[4].data;
-        var previousGen0 = 0,
-            previousGen1 = 0,
-            previousGen2 = 0;
+					memoryChart.data.datasets[5].label = `CPU (${Math.round(diagnostics.cpu)}%)`;
+					memoryChart.data.datasets[6].label = `RPS (${Math.round(diagnostics.rps / 1000)}K)`;
 
-        setInterval(function () {
-            fetch(diagnosticsUrl)
-                .then(response => {
-                    return response.json();
-                })
-                .then(diagnostics => {
-                    var now = new Date();
-                    allocated.push({ x: now, y: diagnostics.allocated / 1000000 });
-                    workingSet.push({ x: now, y: diagnostics.workingSet / 1000000 });
+					if (previousGen2 < diagnostics.gen2) {
+						generation2.push({ x: now, y: 1 });
+						previousGen2 = diagnostics.gen2;
+						previousGen1 = diagnostics.gen1;
+						previousGen0 = diagnostics.gen0;
+					}
+					else if (previousGen1 < diagnostics.gen1) {
+						generation1.push({ x: now, y: 1 });
+						previousGen2 = diagnostics.gen2;
+						previousGen1 = diagnostics.gen1;
+						previousGen0 = diagnostics.gen0;
+					}
+					else if (previousGen0 < diagnostics.gen0) {
+						generation0.push({ x: now, y: 1 });
+						previousGen2 = diagnostics.gen2;
+						previousGen1 = diagnostics.gen1;
+						previousGen0 = diagnostics.gen0;
+					}
 
-                    memoryChart.data.datasets[5].label = `CPU (${Math.round(diagnostics.cpu)}%)`;
-                    memoryChart.data.datasets[6].label = `RPS (${Math.round(diagnostics.rps / 1000)}K)`;
+					if (allocated.length > maxEntries) {
+						let firstDate = allocated[0].x;
 
-                    if (previousGen2 < diagnostics.gen2) {
-                        generation2.push({ x: now, y: 1 });
-                        previousGen2 = diagnostics.gen2;
-                        previousGen1 = diagnostics.gen1;
-                        previousGen0 = diagnostics.gen0;
-                    }
-                    else if (previousGen1 < diagnostics.gen1) {
-                        generation1.push({ x: now, y: 1 });
-                        previousGen2 = diagnostics.gen2;
-                        previousGen1 = diagnostics.gen1;
-                        previousGen0 = diagnostics.gen0;
-                    }
-                    else if (previousGen0 < diagnostics.gen0) {
-                        generation0.push({ x: now, y: 1 });
-                        previousGen2 = diagnostics.gen2;
-                        previousGen1 = diagnostics.gen1;
-                        previousGen0 = diagnostics.gen0;
-                    }
+						allocated.shift();
+						workingSet.shift();
 
-                    if (allocated.length > maxEntries) {
-                        let firstDate = allocated[0].x;
+						while (generation0.length > 0 && generation0[0].x < firstDate) generation0.shift();
+						while (generation1.length > 0 && generation1[0].x < firstDate) generation1.shift();
+						while (generation2.length > 0 && generation2[0].x < firstDate) generation2.shift();
+					}
 
-                        allocated.shift();
-                        workingSet.shift();
+					memoryChart.update();
+				});
+		}, interval);
 
-                        while (generation0.length > 0 && generation0[0].x < firstDate) generation0.shift();
-                        while (generation1.length > 0 && generation1[0].x < firstDate) generation1.shift();
-                        while (generation2.length > 0 && generation2[0].x < firstDate) generation2.shift();
-                    }
-
-                    memoryChart.update();
-                });
-        }, interval);
-
-        document.getElementById("collect-btn").addEventListener("click", function () { fetch(collectUrl); });
+		document.getElementById("collect-btn").addEventListener("click", function () { fetch(collectUrl); });
 
 
-    </script>
+	</script>
 </body>
 
 
